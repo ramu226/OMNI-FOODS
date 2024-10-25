@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omnifood - Never cook again!</title>
+    <link rel="stylesheet" href="food.css" />
+    <link
+      rel="icon"
+      href="data:image/png;base64,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"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <img
+        class="img1"
+        src="https://omnifood.dev/img/omnifood-logo.png"
+        alt=""
+        height="21px"
+        width="160px"
+      />
+      <div class="menu">
+        <div class="text">
+          <div class="text1">How it works</div>
+          <div class="text1">Meals</div>
+          <div class="text1">Testimonials</div>
+          <div class="text1">Pricing</div>
+        </div>
+        <button id="text11">Try for free</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="main1">
+        <div class="m1">
+          A healthy meal delivered to your door, every single day
+        </div>
+        <div class="m2">
+          The smart 365-days-per-year food subscription that will make you eat
+          healthy again. Tailored to your personal tastes and nutritional needs.
+        </div>
+        <div class="m3">
+          <div class="m34">
+            <button id="m31" type="submit">Start eating well</button>
+          </div>
+          <div class="m33">
+            <button id="m32" type="submit">Learn more!</button>
+          </div>
+        </div>
+        <div class="dimg">
+          <div class="di">
+            <img
+              class="im1"
+              src="https://omnifood.dev/img/customers/customer-1.jpg"
+              alt=""
+            />
+            <!-- <img
+              class="im1"
+              src="https://imgs.search.brave.com/ouOftjToEMo0h-ShzdfHqWZYtu9bf-gwhxW2D77U260/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2UzL2Vk/LzQ2L2UzZWQ0Njkz/N2M4ZjI0MGY2NzI5/ZTZiNWFjYWZiNzQ0/LmpwZw"
+              alt=""
+            /> -->
+            <img
+              class="im1"
+              src="https://omnifood.dev/img/customers/customer-2.jpg"
+              alt=""
+            />
+            <img
+              class="im1"
+              src="https://omnifood.dev/img/customers/customer-3.jpg"
+              alt=""
+            />
+            <img
+              class="im1"
+              src="https://omnifood.dev/img/customers/customer-4.jpg"
+              alt=""
+            />
+            <img
+              class="im1"
+              src="https://omnifood.dev/img/customers/customer-5.jpg"
+              alt=""
+            />
+            <img
+              class="im1"
+              src="https://omnifood.dev/img/customers/customer-6.jpg"
+              alt=""
+            />
+          </div>
+          <div class="dimg1">
+            <div class="dii">250,000+</div>
+            <pre>meals delivered last year!</pre>
+            <!-- <div class="dii1">meals delivered last year!</div> -->
+          </div>
+        </div>
+      </div>
+      <div class="main2">
+        <img
+          class="i11"
+          src="https://omnifood.dev/img/hero.webp"
+          alt=""
+          height="600px"
+          width="550px"
+        />
+      </div>
+    </div>
+    <div class="main3">
+      AS FEATURED IN
+      <div class="main31">
+        <img
+          src="https://omnifood.dev/img/logos/techcrunch.png"
+          alt=""
+          height="28.8"
+          width="202.31"
+        />
+        <img
+          src="https://omnifood.dev/img/logos/business-insider.png"
+          alt=""
+          height="30px"
+          width="120px"
+        />
+        <img
+          src="https://omnifood.dev/img/logos/the-new-york-times.png"
+          alt=""
+          height="28.8px"
+          width="210px"
+        />
+        <img
+          src="https://omnifood.dev/img/logos/forbes.png"
+          alt=""
+          height="30px"
+          width="130px"
+        />
+        <img
+          src="https://omnifood.dev/img/logos/usa-today.png"
+          alt=""
+          height="40px"
+          width="180px"
+        />
+      </div>
+    </div>
+    <div class="main4">
+      <div class="tx1">How it works</div>
+      <div class="tx2">Your daily dose of health in 3 simple steps</div>
+    </div>
+    <div class="main5">
+      <div class="tx5">
+        <div class="tx51">01</div>
+        <div class="tx52">Tell us what you like (and what not)</div>
+        <div class="tx53">
+          Never again waste time thinking about what to eat! Omnifood AI will
+          create a 100% personalized weekly meal plan just for you. It makes
+          sure you get all the nutrients and vitamins you need, no matter what
+          diet you follow!
+        </div>
+      </div>
+      <div class="ig5">
+        <img
+          class="ig53"
+          src="https://omnifood.dev/img/app/app-screen-1.png"
+          alt=""
+          height="366px"
+          width="181px"
+        />
+        <div class="ig51"></div>
+        <div class="ig52"></div>
+      </div>
+    </div>
+    <div class="main5">
+      <div class="ig5">
+        <img
+          class="ig53"
+          src="https://omnifood.dev/img/app/app-screen-2.png"
+          alt=""
+          height="366px"
+          width="181px"
+        />
+        <div class="ig51"></div>
+        <div class="ig52"></div>
+      </div>
+      <div class="tx5">
+        <div class="tx51">02</div>
+        <div class="tx52">Approve your weekly meal plan</div>
+        <div class="tx53">
+          Once per week, approve the meal plan generated for you by Omnifood AI.
+          You can change ingredients, swap entire meals, or even add your own
+          recipes.
+        </div>
+      </div>
+    </div>
+    <div class="main5">
+      <div class="tx5">
+        <div class="tx51">03</div>
+        <div class="tx52">Receive meals at convenient time</div>
+        <div class="tx53">
+          Best chefs in town will cook your selected meal every day, and we will
+          deliver it to your door whenever works best for you. You can change
+          delivery schedule and address daily!
+        </div>
+      </div>
+      <div class="ig5">
+        <img
+          class="ig53"
+          src="https://omnifood.dev/img/app/app-screen-3.png"
+          alt=""
+          height="366px"
+          width="181px"
+        />
+        <div class="ig51"></div>
+        <div class="ig52"></div>
+      </div>
+    </div>
+    <div class="main6">
+      <div class="tx61">MEALS</div>
+      <div class="tx62">Omnifood AI chooses from 5,000+ recipes</div>
+      <div class="main7">
+        <div class="main71">
+          <img
+            class="ig71"
+            src="https://omnifood.dev/img/meals/meal-1.jpg"
+            alt=""
+            height="230px"
+            width="330px"
+          />
+          <div class="t">
+            <div class="tx71">Vegeterian</div>
+            <div class="tx72">Japanese Gyozas</div>
+            <div class="tx73">
+              <div class="tx733">
+                <i id="k" class="fa-solid fa-fire"></i><b>650</b> Calories
+              </div>
+              <div class="tx733">
+                <i id="k" class="fa-solid fa-utensils"></i> NutriScore ®
+                <b>74</b>
+              </div>
+              <div class="tx733">
+                <i id="k" class="fa-regular fa-star"></i> <b>4.9</b> rating
+                (537)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main72">
+          <img
+            class="ig71"
+            src="https://omnifood.dev/img/meals/meal-2.jpg"
+            alt=""
+            height="230px"
+            width="330px"
+          />
+          <div class="tt">
+            <div class="tx721">
+              <div class="tx7211">VEGAN</div>
+              <div class="tx7212">PALEIO</div>
+            </div>
+            <div class="tx7213">Avocado Salad</div>
+            <div class="tx723">
+              <div class="tx734">
+                <i id="k" class="fa-solid fa-fire"></i><b>400</b> Calories
+              </div>
+              <div class="tx733">
+                <i id="k" class="fa-solid fa-utensils"></i>
+                NutriScore ® <b>92</b>
+              </div>
+              <div class="tx733">
+                <i id="k" class="fa-regular fa-star"></i><b>4.8</b> rating (441)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main73">
+          <div class="a731">works with any diet:</div>
+          <div class="a732">
+            <i id="k1" class="fa-solid fa-check"></i> Vegeterian
+          </div>
+          <div class="a732">
+            <i id="k1" class="fa-solid fa-check"></i> Vegan
+          </div>
+          <div class="a732">
+            <i id="k1" class="fa-solid fa-check"></i> Pescatarian
+          </div>
+          <div class="a732">
+            <i id="k1" class="fa-solid fa-check"></i> Gluten-free
+          </div>
+          <div class="a732">
+            <i id="k1" class="fa-solid fa-check"></i> Lactose-free
+          </div>
+          <div class="a732"><i id="k1" class="fa-solid fa-check"></i> Keto</div>
+          <div class="a732">
+            <i id="k1" class="fa-solid fa-check"></i> Paleo
+          </div>
+          <div class="a732">
+            <i id="k1" class="fa-solid fa-check"></i> Low FODMAP
+          </div>
+          <div class="a732">
+            <i id="k1" class="fa-solid fa-check"></i> Kid-friendly
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="h">See all recipes →</a>
+    <div class="main8">
+      <div class="main81">
+        <div class="m812">TESTIMONIALS</div>
+        <div class="m813">Once you try it, you can't go back</div>
+        <div class="kkk">
+          <div class="m814">
+            <img
+              class="i82"
+              src="https://omnifood.dev/img/customers/dave.jpg"
+              alt=""
+            />
+            <div class="t814">
+              Inexpensive, healthy and great-tasting meals, without even having
+              to order manually! It feels truly magical.
+            </div>
+            <div class="t815">— Dave Bryson</div>
+          </div>
+          <div class="m814">
+            <img
+              class="i82"
+              src="https://omnifood.dev/img/customers/ben.jpg"
+              alt=""
+            />
+            <div class="t814">
+              The AI algorithm is crazy good, it chooses the right meals for me
+              every time. It's amazing not to worry about food anymore!
+            </div>
+            <div class="t815">— Ben Hadley</div>
+          </div>
+          <div class="m814">
+            <img
+              class="i82"
+              src="https://omnifood.dev/img/customers/steve.jpg"
+              alt=""
+            />
+            <div class="t814">
+              Omnifood is a life saver! I just started a company, so there's no
+              time for cooking. I couldn't live without my daily meals now!
+            </div>
+            <div class="t815">— Steve Miller</div>
+          </div>
+          <div class="m814">
+            <img
+              class="i82"
+              src="https://omnifood.dev/img/customers/hannah.jpg"
+              alt=""
+            />
+            <div class="t814">
+              I got Omnifood for the whole family, and it frees up so much time!
+              Plus, everything is organic and vegan and without plastic.
+            </div>
+            <div class="t815">— Hannah Smith</div>
+          </div>
+        </div>
+      </div>
+      <div class="main82">
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-1.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-2.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-3.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-4.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-5.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-6.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-7.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-8.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-9.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-10.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-11.jpg"
+            alt=""
+          />
+        </div>
+        <div class="mn">
+          <img
+            class="i81"
+            src="https://omnifood.dev/img/gallery/gallery-12.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="M">
+      <div class="m9">PRICING</div>
+      <div class="m99">Eating well without breaking the bank</div>
+    </div>
+    <div class="main9">
+      <div class="m91">
+        <div class="m0">STARTER</div>
+        <div class="m01">$ 399</div>
+        <div class="m02">per month. That's just $13 per meal!</div>
+        <div class="m03">
+          <div class="m04">
+            <i id="k1" class="fa-solid fa-check"></i>1 meal per day
+          </div>
+          <div class="m04">
+            <i id="k1" class="fa-solid fa-check"></i>Order from 11am to 9pm
+          </div>
+          <div class="m04">
+            <i id="k1" class="fa-solid fa-check"></i>Delivery is free
+          </div>
+          <div class="m04">
+            <i id="k1" class="fa-solid fa-xmark"></i>No access to latest recipes
+          </div>
+        </div>
+        <button id="n">Start eating well</button>
+      </div>
+      <div class="m92">
+        <div class="b">BEST VALUE</div>
+        <div class="m0">COMPLETE</div>
+        <div class="m01">$ 649</div>
+        <div class="m02">per month. That's just $11 per meal!</div>
+        <div class="m03">
+          <div class="m04">
+            <i id="k1" class="fa-solid fa-check"></i>2 meals per day
+          </div>
+          <div class="m04">
+            <i id="k1" class="fa-solid fa-check"></i>Order 24/7
+          </div>
+          <div class="m04">
+            <i id="k1" class="fa-solid fa-check"></i>Delivery is free
+          </div>
+          <div class="m04">
+            <i id="k1" class="fa-solid fa-check"></i>Get access to latest
+            recipes
+          </div>
+        </div>
+        <button id="n">Start eating well</button>
+      </div>
+    </div>
+    <div class="mm">
+      Prices include all applicable taxes. You can cancel at any time. Both
+      plans include the following:
+    </div>
+    <div class="main11">
+      <div class="m111">
+        <div class="m110"><i class="fa-solid fa-infinity"></i></div>
+        <div class="m112">Never cook again!</div>
+        <div class="m113">
+          Our subscriptions cover 365 days per year, even including major
+          holidays.
+        </div>
+      </div>
+      <div class="m111">
+        <div class="m110"><i class="fa-solid fa-apple-whole"></i></div>
+        <div class="m112">Local and organic</div>
+        <div class="m113">
+          Our cooks only use local, fresh, and organic products to prepare your
+          meals.
+        </div>
+      </div>
+      <div class="m111">
+        <div class="m110"><i class="fa-brands fa-envira"></i></div>
+        <div class="m112">No waste</div>
+        <div class="m113">
+          All our partners only use reusable containers to package all your
+          meals.
+        </div>
+      </div>
+      <div class="m111">
+        <div class="m110"><i class="fa-solid fa-pause"></i></div>
+        <div class="m112">Pause anytime</div>
+        <div class="m113">
+          Going on vacation? Just pause your subscription, and we refund unused
+          days.
+        </div>
+      </div>
+    </div>
+    <div class="login">
+      <div class="l1">
+        <div class="l12">Get your first meal for free!</div>
+        <div class="l13">
+          Healthy, tasty and hassle-free meals are waiting for you. Start eating
+          well today. You can cancel or pause anytime. And the first meal is on
+          us!
+        </div>
+        <div class="l14">
+          <div class="l15">
+            Full Name
+            <input type="text" placeholder=" John Smith" />
+          </div>
+          <div class="l15">
+            Email address
+            <input type="email" placeholder=" me@example.com" />
+          </div>
+          <div class="l15">
+            Where did you hear from us?
+            <select name="select" id="l16">
+              <option>Please select one option:</option>
+              <option>Friends and family</option>
+              <option>Youtube video</option>
+              <option>Podcast</option>
+              <option>Facebook ad</option>
+              <option>Others</option>
+            </select>
+          </div>
+          <div class="l15">
+            <div class="z"></div>
+            <button id="po" type="submit">sign up now</button>
+          </div>
+        </div>
+      </div>
+      <div class="l2"></div>
+    </div>
+    <div class="footer">
+      <div class="f1">
+        <img
+          src="https://omnifood.dev/img/omnifood-logo.png"
+          alt=""
+          height="27px"
+          width="160px"
+        />
+        <div class="lo">
+          <div class="lo1"><i class="fa-brands fa-instagram"></i></div>
+          <div class="lo1"><i class="fa-brands fa-facebook"></i></div>
+          <div class="lo1"><i class="fa-brands fa-twitter"></i></div>
+        </div>
+        <div class="las">
+          Copyright © 2024 by Omnifood, Inc. All rights reserved.
+        </div>
+      </div>
+      <div class="f1">
+        <div class="f11">Contact us</div>
+        <div class="f13">
+          <div class="f18">
+            623 Harrison St., 2nd Floor, San Francisco, CA 94107
+          </div>
+          <!-- <div class="f12">Sign in</div> -->
+          <!-- <div class="f12">IOS app</div> -->
+          <div class="f18">415-201-6370 hello@omnifood.com</div>
+        </div>
+      </div>
+      <div class="f1">
+        <div class="f11">Account</div>
+        <div class="f13">
+          <div class="f12">Create Account</div>
+          <div class="f12">Sign in</div>
+          <div class="f12">IOS app</div>
+          <div class="f12">Android app</div>
+        </div>
+      </div>
+      <div class="f1">
+        <div class="f11">Company</div>
+        <div class="f13">
+          <div class="f12">About Omnifood</div>
+          <div class="f12">For Business</div>
+          <div class="f12">Cooking partners</div>
+          <div class="f12">Careers</div>
+        </div>
+      </div>
+      <div class="f1">
+        <div class="f11">Resources</div>
+        <div class="f13">
+          <div class="f12">Recipe directory</div>
+          <div class="f12">Help center</div>
+          <div class="f12">Privacy & terms</div>
+          <div class="f12">.</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
